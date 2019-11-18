@@ -1,4 +1,8 @@
-class Table {
-
-  
-}
+// class Table {
+//
+//   constructor {
+//     this.balls = []
+//   }
+//
+//
+// }
