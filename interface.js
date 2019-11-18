@@ -27,10 +27,11 @@ $( document ).ready(function() {
   });
 
   function draw() {
-    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#1E721A";
     ctx.fillRect(0,0,canvas.width, canvas.height);
     ball.calculatePosition()
+    // console.log(ball.yPos)
     drawBall(ball.xPos,ball.yPos);
   };
 
