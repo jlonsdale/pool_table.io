@@ -24,8 +24,8 @@ class Ball {
   }
 
   calculateVelocity() {
-    this.xVel=this.xVel*0.99
-    this.yVel=this.yVel*0.99
+    this.xVel=this.xVel*0.98
+    this.yVel=this.yVel*0.98
   }
 
 
