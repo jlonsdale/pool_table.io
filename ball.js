@@ -6,7 +6,7 @@ class Ball {
     this.xVel = 0;
     this.yVel = 0;
     this.dt = 0.1;
-    this.radius = 10;
+    this.radius = 30;
     this.cor = 0.5;
     this.cof = 0.5;
     this.canvas = document.getElementById("canvas");
