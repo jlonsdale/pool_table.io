@@ -12,17 +12,11 @@ class Ball {
 
     this.radius = 10;
     this.cor = 0.5;
-    this.mass = 10
-    this.adg = 9.81
   }
 
   giveVelocity(xVel,yVel) {
     this.xVel=xVel;
     this.yVel=yVel;
-  }
-
-  frictionalForce() {
-    return (this.cof*this.mass*this.adg)
   }
 
   calculateVelocity() {
@@ -37,30 +31,30 @@ class Ball {
 
   calculatePosition() {
     this.detectCollisionWithBoarder()
-    this.yPos += this.yVel*this.dt
-    this.xPos += this.xVel*this.dt
+    this.yPos += this.yVel*this.dt;
+    this.xPos += this.xVel*this.dt;
   }
 
   detectCollisionWithBoarder() {
     if(this.yPos+this.radius>this.canvas.height) {
-      this.yDirection = 'up'
-      this.yPos = this.canvas.height-this.radius
-      this.yVel= -this.yVel*this.cor
+      this.yDirection = 'up';
+      this.yPos = this.canvas.height-this.radius;
+      this.yVel= -this.yVel*this.cor;
     }
     if(this.yPos-this.radius<0) {
-      this.yDirection = 'down'
-      this.yPos = this.radius
-      this.yVel= -this.yVel*this.cor
+      this.yDirection = 'down';
+      this.yPos = this.radius;
+      this.yVel= -this.yVel*this.cor;
     }
     if(this.xPos+this.radius>this.canvas.width) {
-      this.xDirection = 'left'
-      this.xPos = this.canvas.width-this.radius
-      this.xVel= -this.xVel*this.cor
+      this.xDirection = 'left';
+      this.xPos = this.canvas.width-this.radius;
+      this.xVel= -this.xVel*this.cor;
     }
     if(this.xPos-this.radius<0) {
-      this.xDirection = 'right'
-      this.xPos = this.radius
-      this.xVel= -this.xVel*this.cor
+      this.xDirection = 'right';
+      this.xPos = this.radius;
+      this.xVel= -this.xVel*this.cor;
     }
-  }
-}
+  };
+};

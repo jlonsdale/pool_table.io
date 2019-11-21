@@ -10,7 +10,7 @@ $( document ).ready(function() {
   var y1
   var y2
 
-  mainBall = new Ball(300,300,'white')
+  mainBall = new Ball(300,500,'white')
   var game = new Game(mainBall)
 
   $( "#canvas" ).mousedown(function(canvas) {
