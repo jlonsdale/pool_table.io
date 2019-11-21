@@ -43,10 +43,14 @@ class Game {
     var x = ball1.xPos - ball2.xPos;
     var y = ball1.yPos - ball2.yPos;
     if (a > Math.sqrt((x * x) + (y * y))) {
-      console.log('aaa')
       this.collisionVelocity(ball1,ball2)
-      ball1.setPosition(ball1.xPos+ball1.xVel*0.1,ball1.yPos+ball1.yVel*0.1)
-      ball2.setPosition(ball2.xPos+ball2.xVel*0.1,ball2.yPos+ball2.yVel*0.1)
+      while (a > Math.sqrt((x * x) + (y * y))) {
+        ball1.setPosition(ball1.xPos+ball1.xVel*0.1,ball1.yPos+ball1.yVel*0.1)
+        ball2.setPosition(ball2.xPos+ball2.xVel*0.1,ball2.yPos+ball2.yVel*0.1)
+        var x = ball1.xPos - ball2.xPos;
+        var y = ball1.yPos - ball2.yPos;
+      }
+      return true
     }
     else {}
   };
