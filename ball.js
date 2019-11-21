@@ -11,7 +11,7 @@ class Ball {
     this.canvas = document.getElementById("canvas");
 
     this.radius = 10;
-    this.cor = 0.5;
+    this.cor = 0.4;
   }
 
   giveVelocity(xVel,yVel) {
@@ -20,8 +20,8 @@ class Ball {
   }
 
   calculateVelocity() {
-    this.xVel=this.xVel*0.98
-    this.yVel=this.yVel*0.98
+    this.xVel=this.xVel*0.99
+    this.yVel=this.yVel*0.99
   }
 
   setPosition(x,y) {

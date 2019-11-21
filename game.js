@@ -43,10 +43,12 @@ class Game {
     var x = ball1.xPos - ball2.xPos;
     var y = ball1.yPos - ball2.yPos;
     if (a > Math.sqrt((x * x) + (y * y))) {
+      console.log('aaa')
       this.collisionVelocity(ball1,ball2)
+      ball1.setPosition(ball1.xPos+ball1.xVel*0.1,ball1.yPos+ball1.yVel*0.1)
+      ball2.setPosition(ball2.xPos+ball2.xVel*0.1,ball2.yPos+ball2.yVel*0.1)
     }
-    else {
-    }
+    else {}
   };
 
   collisionVelocity(ball1,ball2) {
@@ -57,8 +59,8 @@ class Game {
   };
 
   speedAfterImpact(u1,u2) {
-    var v1 = ( u1 + u2 + 0.99*(u2 - u1) )/2
-    var v2 = ( u1 + u2 + 0.99*(u1 - u2) )/2
+    var v1 = ( u1 + u2 + 0.80*(u2 - u1) )/2
+    var v2 = ( u1 + u2 + 0.80*(u1 - u2) )/2
     return {'1' : v1,
             '2' : v2};
   }
