@@ -10,7 +10,8 @@ $( document ).ready(function() {
   var y1
   var y2
 
-  ball = new Ball(300,300)
+  mainBall = new Ball(300,300,'white')
+  var game = new Game(mainBall)
 
   $( "#canvas" ).mousedown(function(canvas) {
     var offset = $(this).offset();
@@ -23,21 +24,24 @@ $( document ).ready(function() {
     var offset = $(this).offset();
     x2 = canvas.clientX- offset.left;
     y2 = canvas.clientY- offset.top;
-    ball.giveVelocity(x2-x1,y2-y1)
+    mainBall.giveVelocity(x2-x1,y2-y1)
   });
 
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#1E721A";
     ctx.fillRect(0,0,canvas.width, canvas.height);
-    ball.calculateVelocity()
-    ball.calculatePosition()
-    drawBall(ball.xPos,ball.yPos);
+    game.checkCollision()
+    game.balls.forEach((item,index) => {
+      drawBall(item.xPos,item.yPos,item.colour)
+      item.calculateVelocity()
+      item.calculatePosition()
+    })
   };
 
-  function drawBall(x,y) {
+  function drawBall(x,y,colour) {
     ctx.beginPath();
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = colour;
     ctx.arc(x, y, 10, 0, Math.PI*2);
     ctx.fill();
     ctx.closePath();

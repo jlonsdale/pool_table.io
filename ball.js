@@ -1,15 +1,17 @@
 class Ball {
 
-  constructor(x,y) {
+  constructor(x,y,colour) {
     this.xPos = x;
     this.yPos = y;
     this.xVel = 0;
     this.yVel = 0;
     this.dt = 0.1;
-    this.radius = 30;
-    this.cor = 0.5;
-    this.cof = 0.5;
+
+    this.colour = colour;
     this.canvas = document.getElementById("canvas");
+
+    this.radius = 10;
+    this.cor = 0.5;
     this.mass = 10
     this.adg = 9.81
   }
@@ -28,15 +30,18 @@ class Ball {
     this.yVel=this.yVel*0.98
   }
 
-
-  calculatePosition() {
-    this.detectCollision()
-    this.yPos += this.yVel*this.dt
-    this.xPos += this.xVel*this.dt
-    console.log(this.xPos)
+  setPosition(x,y) {
+    this.xPos = x;
+    this.yPos = y;
   }
 
-  detectCollision() {
+  calculatePosition() {
+    this.detectCollisionWithBoarder()
+    this.yPos += this.yVel*this.dt
+    this.xPos += this.xVel*this.dt
+  }
+
+  detectCollisionWithBoarder() {
     if(this.yPos+this.radius>this.canvas.height) {
       this.yDirection = 'up'
       this.yPos = this.canvas.height-this.radius
