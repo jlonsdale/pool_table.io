@@ -15,6 +15,20 @@ class Ball {
   }
 
   giveVelocity(xVel,yVel) {
+    if(xVel>50) {
+      xVel=50
+    }
+    else if(xVel<-50) {
+      xVel=-50
+    }
+
+    if(yVel>30) {
+      yVel=30
+    }
+    else if(yVel<-30) {
+      yVel=-30
+    }
+    console.log("x="+xVel+"y="+yVel  )
     this.xVel=xVel;
     this.yVel=yVel;
   }

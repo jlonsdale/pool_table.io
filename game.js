@@ -49,10 +49,8 @@ class Game {
         ball2.setPosition(ball2.xPos+ball2.xVel*0.1,ball2.yPos+ball2.yVel*0.1)
         var x = ball1.xPos - ball2.xPos;
         var y = ball1.yPos - ball2.yPos;
-      }
-      return true
+      };
     }
-    else {}
   };
 
   collisionVelocity(ball1,ball2) {
